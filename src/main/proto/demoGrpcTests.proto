@@ -8,13 +8,16 @@ option objc_class_prefix = "HLW";
 package demo.grpc;
 
 service DemoGrpcTestsService {
-  rpc send (DemoGrpcTestsRequest) returns (DemoGrpcTestsReply) {}
+  rpc saveDynamoDb(DemoGrpcTestsRequest) returns (DemoGrpcTestsResponse) {}
 }
 
 message DemoGrpcTestsRequest {
+  reserved "nenhum", "null";
   string name = 1;
+  repeated string phone = 2 ; //int32 [packed=true]
+  string email = 3;
 }
 
-message DemoGrpcTestsReply {
+message DemoGrpcTestsResponse {
   string message = 1;
 }
