@@ -12,7 +12,7 @@ service DemoGrpcTestsService {
 }
 
 message DemoGrpcTestsRequest {
-  reserved "nenhum", "null";
+  reserved "nenhum", "null"; //will not be created fields with this name
   string name = 1;
   repeated string phone = 2 ; //int32 [packed=true]
   string email = 3;
